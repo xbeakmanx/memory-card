@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { Container, GameOver, Game, DataUser } from "../src/components";
+import { Container, GameOver, DataUser } from "../src/components";
+import Game from "./pages/Game";
 
 function App() {
-  const [gameOver, setIsGameOver] = useState(false);
-  const [showModal, setShowModal] = useState(true);
-
+  const [data, setData] = useState({
+    gameOver: false,
+    answers: [],
+    badAnswers: 0,
+  });
   return (
     <Container>
       <DataUser />
-      {!gameOver ? (
-        <Game setIsGameOver={setIsGameOver} />
+      {!data.gameOver ? (
+        <Game setData={setData} />
       ) : (
-        <GameOver setIsGameOver={setIsGameOver} />
+        <GameOver data={data} setData={setData} />
       )}
     </Container>
   );

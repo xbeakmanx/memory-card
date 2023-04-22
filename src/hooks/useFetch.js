@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export const useFetch = () => {
+export const useFetch = (url, shuffleArray) => {
   const [data, setData] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   useEffect(() => {
     (async () => {
       try {
         setIsFetching(true);
-        const res = await fetch(
-          "https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=10"
-        );
+        const res = await fetch(url);
         const { entries } = await res.json();
-        console.log(entries, "entries");
 
         const getAllEntries = [...entries, ...entries];
 
-        setData(getAllEntries);
+        setData(shuffleArray ? shuffleArray(getAllEntries) : getAllEntries);
         setIsFetching(false);
       } catch (error) {
         setData([]);
@@ -24,7 +21,7 @@ export const useFetch = () => {
         setIsFetching(false);
       }
     })();
-  }, []);
+  }, [url, shuffleArray]);
 
   return { data, isFetching };
 };

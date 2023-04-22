@@ -1,12 +1,29 @@
 import { useState } from "react";
-import { FormName, Modal } from "..";
+import { Box, FormName, Modal, Title } from "..";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export default function DataUser() {
-  const [showModal, setShowModal] = useState(true);
-
+  const { user } = useLocalStorage();
+  const [showModal, setShowModal] = useState(!user);
+  const [enableScroll, setEnableScroll] = useState(showModal);
   return (
-    <Modal setShowModal={setShowModal} showModal={showModal}>
-      <FormName />
-    </Modal>
+    <div className="dataUser">
+      {user ? (
+        <Box className="dataUser__container-title">
+          <Title className="dataUser__title">User: {user?.name}</Title>
+        </Box>
+      ) : null}
+      <Modal
+        setShowModal={setShowModal}
+        showModal={showModal}
+        enableScroll={enableScroll}
+        setEnableScroll={setEnableScroll}
+      >
+        <FormName
+          setShowModal={setShowModal}
+          setEnableScroll={setEnableScroll}
+        />
+      </Modal>
+    </div>
   );
 }

@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export function useOnClickCard() {
+export function useOnClickCard({ total }) {
   const [cardOpen, setCardOpen] = useState([]);
   const [collectAnswers, setCollectAnswers] = useState([]);
   const [badAnswers, setBadAnswers] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleClick(id, isSelected, uuid, setIsGameOver) {
-    if (isSelected) return alert("Seleccione otra carta diferente");
+  function handleClick(id, isSelected, uuid, setData) {
+    if (isSelected) return null;
     let arrayAnswers;
 
     if (cardOpen.length >= 1) {
@@ -23,8 +23,12 @@ export function useOnClickCard() {
       setTimeout(() => {
         setCardOpen([]);
         setIsLoading(false);
-        if (arrayAnswers?.length === 10) {
-          setIsGameOver(true);
+        if (arrayAnswers?.length === total / 2) {
+          setData({
+            gameOver: true,
+            answers: arrayAnswers?.length,
+            badAnswers,
+          });
         }
       }, 500);
     } else {
@@ -37,6 +41,7 @@ export function useOnClickCard() {
     collectAnswers: collectAnswers,
     badAnswers: badAnswers,
     isLoading: isLoading,
+    setIsLoading: setIsLoading,
     onClick: handleClick,
   };
 

@@ -1,14 +1,14 @@
 export function useLocalStorage() {
   let parsedUser;
-  function insert() {
-    const localStorageUser = localStorage.getItem("USER");
+  const localStorageUser = localStorage.getItem("user");
+  function insert(name) {
     if (!localStorageUser) {
-      localStorage.setItem("USER", JSON.stringify([]));
+      localStorage.setItem("user", JSON.stringify({ name }));
       parsedUser = [];
-    } else {
-      parsedUser = JSON.parse(localStorageUser);
     }
   }
+
+  parsedUser = JSON.parse(localStorageUser);
 
   return { user: parsedUser, insert };
 }

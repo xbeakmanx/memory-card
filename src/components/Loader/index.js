@@ -1,19 +1,13 @@
+import { Grid } from "..";
 import CardLoader from "./CardLoader";
 
-export default function Loader() {
+export default function Loader({ number }) {
+  const n = number || 12;
   return (
-    <>
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-      <CardLoader />
-    </>
+    <Grid>
+      {[...Array(n)].map((e, i) => (
+        <CardLoader key={i} />
+      ))}
+    </Grid>
   );
 }

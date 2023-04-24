@@ -20,8 +20,8 @@ A list of technologies used within the project:
 
 - [ReactJS](https://es.react.dev/): Version 18.2.0
 - [Tailwindcss](https://tailwindcss.com/): Version 3.3.1
-- [Node](https://nodejs.org/es/): Version 16.13.-0
-- [NPM](https://www.npmjs.com/): Version 8.1.0giut
+- [Node](https://nodejs.org/es/): Version 16.13.0
+- [NPM](https://www.npmjs.com/): Version 8.1.0
 
 ## Installation
 

@@ -89,7 +89,8 @@ body {
 }
 
 .cardLoader {
-  @apply animate-pulse h-60 lg:h-80 bg-gray-200 rounded-md dark:bg-gray-700 w-full mb-4;
+  height: 120px;
+  @apply animate-pulse sm:h-52 md:h-60 lg:h-80 bg-gray-200 rounded-md dark:bg-gray-700 w-full mb-4;
 }
 
 .modal {

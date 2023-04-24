@@ -43,7 +43,7 @@ body {
 }
 
 .box {
-  @apply max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+  @apply max-w-sm p-3 border rounded-lg shadow bg-gray-800 border-gray-700;
 }
 .containerComponent--background {
   @apply bg-gradient-to-r from-slate-800 to-slate-900;
@@ -90,7 +90,7 @@ body {
 
 .cardLoader {
   height: 120px;
-  @apply animate-pulse sm:h-52 md:h-60 lg:h-80 bg-gray-200 rounded-md dark:bg-gray-700 w-full mb-4;
+  @apply animate-pulse sm:h-52 md:h-60 lg:h-80  rounded-md bg-gray-700 w-full mb-4;
 }
 
 .modal {

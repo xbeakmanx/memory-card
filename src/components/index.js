@@ -1,4 +1,3 @@
-import Card from "./Card";
 import Grid from "./Grid";
 import Container from "./Container";
 import Title from "./Title";
@@ -12,7 +11,6 @@ import Button from "./Button";
 import Star from "./Star";
 
 export {
-  Card,
   Grid,
   Container,
   Title,

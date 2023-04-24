@@ -1,4 +1,5 @@
-import { Card, Grid, Title, Loader } from "../../../src/components";
+import { Grid, Title, Loader } from "../../../src/components";
+import Card from "./Components/Card";
 import { useFetch } from "../../hooks/useFetch";
 import { useOnClickCard } from "../../hooks/useOnClickCard";
 import { shuffleArray } from "../../services/shuffleArray";

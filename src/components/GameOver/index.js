@@ -1,10 +1,14 @@
 import { Box, Button, Star, Title } from "..";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export default function GameOver({ data, setData }) {
+  const { user } = useLocalStorage();
   return (
     <>
       <Box className={"gameOver"}>
-        <Title className={"gameOver__title"}>Level complete!</Title>
+        <Title className={"gameOver__title"}>
+          Congrats, {user.name}. Level complete!
+        </Title>
         <div className="gameOver__rating">
           <Star />
           <Star />

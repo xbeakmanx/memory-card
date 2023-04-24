@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useFetch = (url, shuffleArray) => {
   const [data, setData] = useState([]);
-  const [isFetching, setIsFetching] = useState(false);
+  const [isFetching, setIsFetching] = useState(true);
   useEffect(() => {
     (async () => {
       try {

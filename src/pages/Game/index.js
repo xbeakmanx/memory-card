@@ -26,9 +26,7 @@ export default function Game({ setData }) {
       {isFetching ? (
         <Loader />
       ) : images.length === 0 ? (
-        <Title className="lg:text-xl mt-5">
-          Hubo un error al consultar los datos, por favor intente mas tarde.
-        </Title>
+        <Title className="lg:text-xl mt-5">Error, please try again.</Title>
       ) : (
         <Grid>
           {images.map((el, index) => (

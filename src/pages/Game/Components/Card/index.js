@@ -28,9 +28,13 @@ export default function Card({
             : "card--hover"
         }`}
       >
-        {isSelected || isCorrect ? (
-          <img src={image} alt={alt} className="card__image" />
-        ) : null}
+        <img
+          src={image}
+          alt={alt}
+          className={`card__image ${
+            isSelected || isCorrect ? "block" : "hidden"
+          }`}
+        />
       </div>
     </>
   );
